@@ -1,0 +1,29 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dictionary Search</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dics/style.css' %}">
+</head>
+<body>
+    <h1>Dictionary Search</h1>
+
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+
+    {% if meanings %}
+        <h2>Meanings:</h2>
+        <ul>
+        {% for meaning in meanings %}
+            <li>{{ meaning }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
+</body>
+</html>
